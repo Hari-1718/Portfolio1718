@@ -1,67 +1,100 @@
-# Portfolio16 — Hari Prasad
+﻿# Portfolio1718 — Chinimilli Hari Prasad
 
-Personal portfolio built with Next.js (App Router), TypeScript, and Tailwind CSS. Showcases projects, skills, achievements, LeetCode stats, and contact info — optimized for performance and accessibility.
+Modern personal portfolio built with Next.js (App Router), React 19, TypeScript, and Tailwind CSS. It showcases projects, skills, achievements, and LeetCode activity with a fast, accessible UI.
+
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript) ![Tailwind](https://img.shields.io/badge/Tailwind%20CSS-4-38b2ac?logo=tailwindcss) ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
 
 ## Overview
 
 - **Author:** Chinimilli Hari Prasad
 - **GitHub:** [@Hari-1718](https://github.com/Hari-1718)
-- **Repository:** [Portfolio16](https://github.com/Hari-1718/Portfolio16)
-- **Resume:** See `public/ChinimilliHariPrasad.Resume.pdf`
+- **Repository:** [Portfolio1718](https://github.com/Hari-1718/Portfolio1718)
+- **Resume:** Default at `public/ChinimilliHariPrasad.Resume.pdf` (configurable)
 
 ## Features
 
-- Responsive UI with smooth animations
-- Dark/Light theme toggle
+- Responsive layout with smooth, hardware-accelerated transitions
+- Light/Dark theme toggle with persistent preference
 - Sections: Home, About, Skills, Projects, Achievements, Contact
-- LeetCode widgets: stats, recent submissions, calendar
-- Accessible components built with Radix + Tailwind
+- LeetCode integration: stats, recent submissions, and submission calendar
+- Accessible components (Radix primitives + shadcn/ui) and semantic markup
 
 ## Tech Stack
 
 - Next.js 15 (App Router)
-- TypeScript
-- Tailwind CSS
-- Radix UI + shadcn/ui components
-- Deployed on Vercel
+- React 19 + TypeScript 5
+- Tailwind CSS 4 + `tailwindcss-animate`
+- Radix UI primitives, shadcn-style components
+- Recharts for visualizations
 
-## Getting Started
+## Quick Start
 
-Install dependencies and run the dev server:
+Prerequisites: Node.js 18+ and npm.
 
 ```bash
+# Install dependencies
 npm install
+
+# Start the dev server (Turbopack)
 npm run dev
+
+# Build and run production
+npm run build
+npm start
 ```
 
-Open http://localhost:3000 in your browser.
+Open http://localhost:3000 to view the site.
 
 ### Scripts
 
-- `npm run dev` — Start dev server
-- `npm run build` — Build for production
-- `npm start` — Run production server
-- `npm run lint` — Lint and type-check
-- `npm run optimize-images` — Optimize images (optional)
+- `dev`: Start Next.js dev server with Turbopack
+- `build`: Production build
+- `start`: Serve the production build
+- `lint`: Lint the codebase
+- `optimize-images`: Optimize images in `public/`
+- `optimize-profile`: Compress large profile assets
+
+## Configuration
+
+Optional environment variables:
+
+- `RESUME`: Path or URL to your resume PDF used in navbar/footer. Defaults to `/ChinimilliHariPrasad.Resume.pdf`.
+
+Create a `.env.local` in the project root if you want to override defaults:
+
+```env
+# example
+RESUME=/MyResume.pdf
+```
 
 ## Project Structure
 
-- `src/app` — App Router, pages, layout, global styles
-- `src/components` — UI and feature components (Navbar, Projects, LeetCode widgets, etc.)
-- `src/hooks` — Custom hooks (`theme-colors`, `use-mobile`)
-- `src/lib` — Utilities (`colors-registry`, `utils`)
-- `public` — Static assets
+- `src/app`: Global styles, `layout`, routes, metadata
+- `src/components`: UI building blocks and feature sections (Navbar, Projects, LeetCode, etc.)
+- `src/hooks`: Custom hooks (`theme-colors`, `use-mobile`)
+- `src/lib`: Utilities (`colors-registry`, `utils`)
+- `public`: Static assets including images and resume PDF
 
 ## Deployment
 
-This project is optimized for Vercel. You can deploy directly by connecting the GitHub repo and enabling `Build & Output Settings` for Next.js.
+Deploy on Vercel (recommended):
+
+1. Import the GitHub repo `Hari-1718/Portfolio1718`.
+2. Framework preset: Next.js.
+3. Build command: `next build` (auto).
+4. Output: `.next` (auto).
+5. Add environment variables if needed (e.g., `RESUME`).
 
 Docs: https://nextjs.org/docs/app/building-your-application/deploying
 
+## CI
+
+Basic GitHub Actions workflow is included at `.github/workflows/ci.yml` for install/build checks.
+
 ## License
 
-Licensed under MIT. See `LICENSE` for details.
+MIT — see `LICENSE` for details.
 
 ---
 
-Made by [Hari Prasad Chinimilli](https://github.com/Hari-1718)
+Made with  by [Hari Prasad Chinimilli](https://github.com/Hari-1718)
