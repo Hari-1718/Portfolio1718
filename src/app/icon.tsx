@@ -29,7 +29,7 @@ export default function Icon() {
                     background: 'transparent',
                 }}
             >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+
                 <img
                     src={base64Img}
                     alt="Avatar"

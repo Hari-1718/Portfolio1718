@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Calendar, MapPin, Building2, GraduationCap } from "lucide-react";
+import { MapPin, Building2 } from "lucide-react";
 import SectionBackground from "./SectionBackground";
 
 // Experience Data Interface
