@@ -6,13 +6,16 @@ const HomeSection = () => {
   const headingWords = "Prompt Engineer & Generative AI Specialist".split(" ");
 
   return (
-    <div
-      className="w-full relative min-h-screen"
-      style={{
-        backgroundSize: "40px 40px",
-        backgroundImage: "radial-gradient(circle, var(--primary) 1px, transparent 1px)",
-      }}
-    >
+    <div className="w-full relative min-h-screen bg-[#DFDBE5] dark:bg-background">
+      <div
+        className="absolute inset-0 opacity-40 pointer-events-none bg-primary"
+        style={{
+          maskImage: "url('/topography/topography.svg')",
+          WebkitMaskImage: "url('/topography/topography.svg')",
+          maskRepeat: "repeat",
+          WebkitMaskRepeat: "repeat",
+        }}
+      />
       <section
         id="home"
         className="flex snap-start flex-col h-screen items-center justify-center opacity-0 translate-y-8 animate-[fadeInUp_0.7s_ease-out_0.1s_forwards]"

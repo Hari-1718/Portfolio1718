@@ -37,7 +37,7 @@ const Home = async () => {
   }
 
   return (
-    <div className='flex flex-col px-4 max-sm:px-2 w-full items-center snap-y snap-proximity justify-center'>
+    <div className='flex flex-col w-full items-center snap-y snap-proximity justify-center'>
       <HomeSection />
       <AboutMe
         stats={stats}

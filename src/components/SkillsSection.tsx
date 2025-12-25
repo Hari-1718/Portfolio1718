@@ -15,7 +15,8 @@ import JavaScriptSvg from "@/components/icons/javascript.svg";
 import TensorFlowSvg from "@/components/icons/tensorflow.svg";
 import GitSvg from "@/components/icons/git.svg";
 import RestApiSvg from "@/components/icons/restapi.svg";
-import { GridPattern } from "./magicui/grid-pattern";
+import SectionBackground from "./SectionBackground";
+
 
 type SkillImage = React.FC<React.SVGProps<SVGSVGElement>>;
 
@@ -57,11 +58,21 @@ const skillCardVariant = {
 const SkillsSection = () => {
   return (
     <section
-      className="min-h-[calc(100vh-7rem)] @container overflow-hidden relative space-y-4 items-center py-12 snap-start w-full flex flex-col justify-center"
+      className="min-h-[calc(100vh-7rem)] @container overflow-hidden relative space-y-4 items-center py-12 snap-start w-full flex flex-col justify-center bg-[#DFDBE5] dark:bg-background"
       id="skills"
     >
-      <GridPattern strokeDasharray="1 2" className="fill-primary/30 -z-10 stroke-primary/80 [mask-image:radial-gradient(90vw_circle_at_center,var(--muted),transparent)] sm:[mask-image:radial-gradient(90vh_circle_at_center,var(--muted),transparent)] md:[mask-image:radial-gradient(50vw_circle_at_center,var(--muted),transparent)] lg:[mask-image:radial-gradient(50vw_circle_at_center,var(--muted),transparent)]" />
-      
+      <div
+        className="absolute inset-0 opacity-10 pointer-events-none bg-primary"
+        style={{
+          maskImage: "url('/brick-wall/brick-wall.svg')",
+          WebkitMaskImage: "url('/brick-wall/brick-wall.svg')",
+          maskRepeat: "repeat",
+          WebkitMaskRepeat: "repeat",
+        }}
+      />
+      <SectionBackground text="SKILLS" />
+
+
       <motion.h1
         className="text-4xl text-center font-black max-sm:text-2xl"
         initial={{ opacity: 0, y: -20 }}

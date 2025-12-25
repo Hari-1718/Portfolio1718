@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import DotsBackground from "./DotsBackground";
+import SectionBackground from "./SectionBackground";
 import GithubIcon from "@/components/icons/github.svg";
 import EmailIcon from "@/components/icons/email.svg";
 import XIcon from "@/components/icons/x.svg";
@@ -172,6 +173,7 @@ const Contact = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
+        <SectionBackground text="CONTACT" />
         <motion.div
           className="p-1 space-y-4 rounded-md"
           variants={headerVariants}

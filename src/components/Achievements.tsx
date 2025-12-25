@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { GridPattern } from "./magicui/grid-pattern";
+import SectionBackground from "./SectionBackground";
 import { Award, Trophy, Target, Code } from "lucide-react";
 
 type Achievement = {
@@ -106,10 +106,8 @@ const Achievements = () => {
       id="achievements"
       className="min-h-[calc(100vh-7rem)] relative flex items-center py-12 justify-center w-full"
     >
-      <GridPattern
-        strokeDasharray="1 2"
-        className="fill-primary/30 -z-10 stroke-primary/80 [mask-image:radial-gradient(90vw_circle_at_center,var(--muted),transparent)]"
-      />
+      <SectionBackground text="ACHIEVEMENTS" />
+
 
       <div className="max-w-6xl w-full space-y-8 px-4">
         <motion.div

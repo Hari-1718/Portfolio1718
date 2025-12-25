@@ -4,6 +4,7 @@ import { motion, Variants } from 'framer-motion'
 import Image from 'next/image'
 import { ContainerTextFlip } from './ui/container-text-flip'
 import LeetcodeStats from './LeetcodeStats'
+import SectionBackground from './SectionBackground'
 
 
 // About me section with profile image and bio
@@ -50,102 +51,105 @@ const AboutMe = ({
   }
 
   return (
-    <motion.section
-      id="about-me"
-      className="flex snap-center min-h-screen py-14 max-w-4xl flex-col md:flex-row items-center justify-between max-sm:justify-center gap-8 max-sm:gap-2"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <div className="flex-shrink-0 relative w-[300px] h-[300px] max-sm:w-[250px] max-sm:h-[250px]">
-        <Image
-          src="/hari-profile.jpg"
-          alt="Hari Prasad Chinimilli"
-          width={300}
-          height={300}
-          className="object-cover transition-all duration-500 rounded-full aspect-square border-4 border-primary/20 shadow-lg"
-          priority
-          sizes="(max-width: 640px) 300px, 400px"
-        />
-      </div>
+    <section id="about-me" className="w-full relative py-14 snap-center min-h-screen flex items-center justify-center">
+      <SectionBackground text="ABOUT ME" className="opacity-10" />
 
       <motion.div
-        className="space-y-4 max-md:px-4 text-center md:text-left"
+        className="flex flex-col md:flex-row items-center justify-between max-sm:justify-center gap-8 max-sm:gap-2 max-w-4xl w-full px-4"
         variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <motion.h1
-          className="text-4xl max-sm:text-3xl font-bold tracking-tight"
-          variants={itemVariants}
-          whileHover={{
-            scale: 1.02,
-            transition: { duration: 0.2 }
-          }}
-        >
-          Hari Prasad Chinimilli
-        </motion.h1>
-        <motion.p
-          className="text-base font-medium text-primary/80"
-          variants={itemVariants}
-        >
-          Prompt Engineer & Generative AI Specialist
-        </motion.p>
-
-        <motion.p
-          className="max-sm:text-sm"
-          variants={itemVariants}
-        >
-          Aspiring Prompt Engineer and Generative AI Specialist passionate about building intelligent solutions. Experienced in developing MERN full-stack applications and AI/ML systems, including recommendation engines, NLP chatbots, and data-driven analytics platforms.
-        </motion.p>
+        <div className="flex-shrink-0 relative w-[300px] h-[300px] max-sm:w-[250px] max-sm:h-[250px]">
+          <Image
+            src="/hari-profile.jpg"
+            alt="Hari Prasad Chinimilli"
+            width={300}
+            height={300}
+            className="object-cover transition-all duration-500 rounded-full aspect-square border-4 border-primary/20 shadow-lg"
+            priority
+            sizes="(max-width: 640px) 300px, 400px"
+          />
+        </div>
 
         <motion.div
-          variants={itemVariants}
-          className='w-full flex items-center max-sm:flex-col gap-8 justify-between'
+          className="space-y-4 max-md:px-4 text-center md:text-left w-full"
+          variants={containerVariants}
         >
-          <ContainerTextFlip className='h-fit'
-            words={['Creative', 'Passionate', 'Tech-Savvy', 'Problem Solver', 'Adaptable']}
-          />
-          <LeetcodeStats
-            stats={stats}
-            recentSubmissions={recentSubmissions}
-            totalAvailable={totalAvailable}
-            totalQuestions={totalQuestions}
-            calendar={calendarData?.submissionCalendar || {}}
-            streak={calendarData?.streak || 0}
-            totalActiveDays={calendarData?.totalActiveDays || 0}
-          />
-        </motion.div>
+          <motion.h1
+            className="text-4xl max-sm:text-3xl font-bold tracking-tight"
+            variants={itemVariants}
+            whileHover={{
+              scale: 1.02,
+              transition: { duration: 0.2 }
+            }}
+          >
+            Hari Prasad Chinimilli
+          </motion.h1>
+          <motion.p
+            className="text-base font-medium text-primary/80"
+            variants={itemVariants}
+          >
+            Prompt Engineer & Generative AI Specialist
+          </motion.p>
+
+          <motion.p
+            className="max-sm:text-sm"
+            variants={itemVariants}
+          >
+            Aspiring Prompt Engineer and Generative AI Specialist passionate about building intelligent solutions. Experienced in developing MERN full-stack applications and AI/ML systems, including recommendation engines, NLP chatbots, and data-driven analytics platforms.
+          </motion.p>
+
+          <motion.div
+            variants={itemVariants}
+            className='w-full flex items-center max-sm:flex-col gap-8 justify-between'
+          >
+            <ContainerTextFlip className='h-fit'
+              words={['Creative', 'Passionate', 'Tech-Savvy', 'Problem Solver', 'Adaptable']}
+            />
+            <LeetcodeStats
+              stats={stats}
+              recentSubmissions={recentSubmissions}
+              totalAvailable={totalAvailable}
+              totalQuestions={totalQuestions}
+              calendar={calendarData?.submissionCalendar || {}}
+              streak={calendarData?.streak || 0}
+              totalActiveDays={calendarData?.totalActiveDays || 0}
+            />
+          </motion.div>
 
 
 
-        <motion.p
-          className="text-xl pt-8 font-bold font-dancing-script"
-          variants={{
-            hidden: {
-              opacity: 0,
-              y: 20,
-              scale: 0.9
-            },
-            visible: {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              transition: {
-                duration: 1,
-                delay: 0.2
+          <motion.p
+            className="text-xl pt-8 font-bold font-dancing-script"
+            variants={{
+              hidden: {
+                opacity: 0,
+                y: 20,
+                scale: 0.9
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: {
+                  duration: 1,
+                  delay: 0.2
+                }
               }
-            }
-          } as Variants}
-          whileHover={{
-            scale: 1.05,
-            textShadow: "0px 0px 8px rgba(0,0,0,0.3)",
-            transition: { duration: 0.2 }
-          }}
-        >
-          &quot; Innovation distinguishes between a leader and a follower. &quot;
-        </motion.p>
+            } as Variants}
+            whileHover={{
+              scale: 1.05,
+              textShadow: "0px 0px 8px rgba(0,0,0,0.3)",
+              transition: { duration: 0.2 }
+            }}
+          >
+            &quot; Innovation distinguishes between a leader and a follower. &quot;
+          </motion.p>
+        </motion.div>
       </motion.div>
-    </motion.section>
+    </section>
   )
 }
 
