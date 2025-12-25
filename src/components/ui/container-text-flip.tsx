@@ -30,18 +30,18 @@ export function ContainerTextFlip({
   const [width, setWidth] = useState(100);
   const textRef = React.useRef<HTMLDivElement>(null);
 
-  const updateWidthForWord = () => {
+  const updateWidthForWord = React.useCallback(() => {
     if (textRef.current) {
       // Add some padding to the text width (30px on each side)
       const textWidth = textRef.current.scrollWidth + 30;
       setWidth(textWidth);
     }
-  };
+  }, []);
 
   useEffect(() => {
     // Update width whenever the word changes
     updateWidthForWord();
-  }, [currentWordIndex]);
+  }, [currentWordIndex, updateWidthForWord]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {

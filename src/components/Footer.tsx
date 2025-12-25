@@ -36,7 +36,7 @@ const Footer: React.FC<{ resumeLink: string }> = ({ resumeLink }) => {
             />
           </div>
           <p className="font-bold text-lg max-sm:text-base text-left">
-            HariPrasad | Prompt Engineer & Generative AI Specialist
+            HariPrasad | GenAI & Full Stack Developer
           </p>
         </motion.div>
 
@@ -48,7 +48,7 @@ const Footer: React.FC<{ resumeLink: string }> = ({ resumeLink }) => {
           viewport={{ amount: 0.5 }}
           className="font-dancing-script text-xl max-sm:text-base max-sm:font-normal font-bold mt-2"
         >
-          &quot; Innovation distinguishes between a leader and a follower. &quot;
+          &quot; Turning imagination into intelligent reality. &quot;
         </motion.blockquote>
       </section>
 
@@ -83,7 +83,7 @@ const Footer: React.FC<{ resumeLink: string }> = ({ resumeLink }) => {
       >
         © {currentYear} All rights reserved.
       </motion.p>
-    </footer>
+    </footer >
   );
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 
 // Home section with animated title
@@ -36,10 +37,12 @@ const HomeSection = () => {
             ))}
           </h1>
 
-          <p className="*:text-primary backdrop-blur-sm bg-foreground/5 p-4 leading-tight font-medium text-foreground/80 rounded-xl text-center text-xl max-sm:text-base opacity-0 translate-y-4 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 animate-[fadeInUp_0.6s_ease-out_1.2s_forwards]">
-            Passionate GenAI & Full Stack Developer building intelligent web solutions. Experienced in developing MERN applications and AI/ML systems, including recommendation engines, NLP chatbots, and analytics platforms.
-
-          </p>
+          <div className="backdrop-blur-sm bg-foreground/5 p-4 rounded-xl opacity-0 translate-y-4 animate-[fadeInUp_0.6s_ease-out_1.2s_forwards]">
+            <TextGenerateEffect
+              words="Passionate GenAI & Full Stack Developer building intelligent web solutions. Experienced in developing MERN applications and AI/ML systems, including recommendation engines, NLP chatbots, and analytics platforms."
+              className="text-center text-xl max-sm:text-base font-medium text-foreground/80"
+            />
+          </div>
         </div>
       </section>
     </div>

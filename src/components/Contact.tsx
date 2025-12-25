@@ -203,7 +203,7 @@ const Contact = () => {
           {contactInfo.map((contact, idx) => (
             <motion.li
               key={idx}
-              className="relative hover:bg-primary/20 transition-all duration-300 hover:drop-shadow-primary/40 hover:drop-shadow-2xl min-w-[8rem] backdrop-blur-[1px] bg-foreground/5 rounded-md group flex-1"
+              className="relative px-4 py-2 rounded-md border border-neutral-300 bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition duration-200 min-w-[8rem] group flex-1 dark:border-white dark:bg-black dark:text-white dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]"
               variants={itemVariants}
               whileHover="hover"
               whileTap={contact.href.startsWith('mailto:') ? undefined : "tap"}
@@ -212,8 +212,6 @@ const Contact = () => {
                 window.location.href = 'mailto:hariprasadchinimilli18@gmail.com';
               } : undefined}
               style={{
-                transformStyle: "preserve-3d",
-                perspective: "1000px",
                 cursor: contact.href.startsWith('mailto:') ? 'pointer' : 'default'
               }}
             >

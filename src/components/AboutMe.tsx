@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
-import Image from 'next/image'
 import { ContainerTextFlip } from './ui/container-text-flip'
+import { ProfileLens } from './ProfileLens'
 import LeetcodeStats from './LeetcodeStats'
 import SectionBackground from './SectionBackground'
 
@@ -61,16 +61,8 @@ const AboutMe = ({
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="flex-shrink-0 relative w-[300px] h-[300px] max-sm:w-[250px] max-sm:h-[250px]">
-          <Image
-            src="/hari-profile.jpg"
-            alt="Hari Prasad Chinimilli"
-            width={300}
-            height={300}
-            className="object-cover transition-all duration-500 rounded-full aspect-square border-4 border-primary/20 shadow-lg"
-            priority
-            sizes="(max-width: 640px) 300px, 400px"
-          />
+        <div className="flex-shrink-0 relative w-[300px] h-[300px] max-sm:w-[250px] max-sm:h-[250px] flex items-center justify-center">
+          <ProfileLens />
         </div>
 
         <motion.div

@@ -30,6 +30,7 @@ export default function Icon() {
                 }}
             >
 
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src={base64Img}
                     alt="Avatar"
