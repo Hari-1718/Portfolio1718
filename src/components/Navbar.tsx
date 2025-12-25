@@ -28,14 +28,15 @@ interface NavLink {
 // Navigation links
 const navLinks: NavLink[] = [
   { href: "#about-me", label: "About Me" },
-  { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
   { href: "#achievements", label: "Achievements" },
   { href: "#contact-me", label: "Contact Me" },
 ];
 
 // Navbar component
-const Navbar: React.FC<{resumeLink : string}> = ({resumeLink}) => {
+const Navbar: React.FC<{ resumeLink: string }> = ({ resumeLink }) => {
   const highlightRef = useRef<HTMLDivElement>(null);
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLLIElement>) => {
@@ -62,7 +63,7 @@ const Navbar: React.FC<{resumeLink : string}> = ({resumeLink}) => {
       <NavigationMenuList className="w-dvw h-[4rem] px-4 max-md:px-2 items-center">
         {/* Logo/Name */}
         <NavigationMenuItem className="mr-auto">
-            <Link className="text-xl font-montserrat py-3 font-bold" href="/">
+          <Link className="text-xl font-montserrat py-3 font-bold" href="/">
             Hari Prasad Chinimilli
           </Link>
         </NavigationMenuItem>

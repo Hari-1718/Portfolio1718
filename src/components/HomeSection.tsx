@@ -3,7 +3,7 @@ import React from "react";
 
 // Home section with animated title
 const HomeSection = () => {
-  const headingWords = "Prompt Engineer & Generative AI Specialist".split(" ");
+  const headingWords = "GenAI & Full Stack Developer".split(" ");
 
   return (
     <div className="w-full relative min-h-screen bg-[#DFDBE5] dark:bg-background">
@@ -37,7 +37,7 @@ const HomeSection = () => {
           </h1>
 
           <p className="*:text-primary backdrop-blur-sm bg-foreground/5 p-4 leading-tight font-medium text-foreground/80 rounded-xl text-center text-xl max-sm:text-base opacity-0 translate-y-4 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 animate-[fadeInUp_0.6s_ease-out_1.2s_forwards]">
-            Aspiring Prompt Engineer and Generative AI Specialist passionate about building intelligent solutions. Experienced in developing MERN full-stack applications and AI/ML systems, including recommendation engines, NLP chatbots, and data-driven analytics platforms.
+            Passionate GenAI & Full Stack Developer building intelligent web solutions. Experienced in developing MERN applications and AI/ML systems, including recommendation engines, NLP chatbots, and analytics platforms.
 
           </p>
         </div>

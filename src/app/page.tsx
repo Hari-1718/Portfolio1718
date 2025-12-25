@@ -7,6 +7,7 @@ import Projects from '@/components/Projects'
 import Achievements from '@/components/Achievements'
 import Contact from '@/components/Contact'
 import { fetchLeetCodeData } from '@/actions/actions'
+import Experience from '@/components/Experience'
 
 // Main page component
 const Home = async () => {
@@ -48,6 +49,7 @@ const Home = async () => {
       />
       <SkillsSection />
       <Projects />
+      <Experience />
       <Achievements />
       <Contact />
     </div>

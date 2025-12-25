@@ -91,14 +91,14 @@ const AboutMe = ({
             className="text-base font-medium text-primary/80"
             variants={itemVariants}
           >
-            Prompt Engineer & Generative AI Specialist
+            GenAI & Full Stack Developer
           </motion.p>
 
           <motion.p
             className="max-sm:text-sm"
             variants={itemVariants}
           >
-            Aspiring Prompt Engineer and Generative AI Specialist passionate about building intelligent solutions. Experienced in developing MERN full-stack applications and AI/ML systems, including recommendation engines, NLP chatbots, and data-driven analytics platforms.
+            Passionate GenAI & Full Stack Developer building intelligent web solutions. Experienced in developing MERN applications and AI/ML systems, including recommendation engines, NLP chatbots, and analytics platforms.
           </motion.p>
 
           <motion.div
