@@ -9,7 +9,7 @@ Modern personal portfolio built with Next.js (App Router), React 19, TypeScript,
 - **Author:** Chinimilli Hari Prasad
 - **GitHub:** [@Hari-1718](https://github.com/Hari-1718)
 - **Repository:** [Portfolio1718](https://github.com/Hari-1718/Portfolio1718)
-- **Resume:** Default at `public/ChinimilliHariPrasad.Resume.pdf` (configurable)
+- **Resume:** Default at `public/ResumeHariPrasad.pdf` (configurable)
 
 ## Features
 
@@ -58,7 +58,7 @@ Open http://localhost:3000 to view the site.
 
 Optional environment variables:
 
-- `RESUME`: Path or URL to your resume PDF used in navbar/footer. Defaults to `/ChinimilliHariPrasad.Resume.pdf`.
+- `RESUME`: Path or URL to your resume PDF used in navbar/footer. Defaults to `/ResumeHariPrasad.pdf`.
 
 Create a `.env.local` in the project root if you want to override defaults:
 
