@@ -1,8 +1,9 @@
+"use client";
+
 import React from "react";
+import { motion } from "motion/react";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 
-
-// Home section with animated title
 const HomeSection = () => {
   const headingWords = "GenAI & Full Stack Developer".split(" ");
 
@@ -19,30 +20,41 @@ const HomeSection = () => {
       />
       <section
         id="home"
-        className="flex snap-start flex-col h-screen items-center justify-center opacity-0 translate-y-8 animate-[fadeInUp_0.7s_ease-out_0.1s_forwards]"
+        className="flex snap-start flex-col h-screen items-center justify-center"
       >
-        <div className="max-w-4xl space-y-8">
-          <h1 className="text-6xl text-center font-black max-sm:text-4xl transition-all duration-300">
-            {headingWords.map((word, index) => (
-              <span
-                key={index}
-                className="inline-block mr-4 max-sm:mr-2 opacity-0 -translate-y-4 hover:scale-110 transition-all duration-300 cursor-default animate-[fadeInDown_0.6s_ease-out_forwards]"
-                style={{
-                  animationDelay: `${index * 100 + 300}ms`,
-                  transformOrigin: "center bottom",
-                }}
-              >
-                {word}
-              </span>
-            ))}
-          </h1>
+        <div className="max-w-4xl space-y-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 className="text-6xl font-black max-sm:text-4xl transition-all duration-300">
+              {headingWords.map((word, index) => (
+                <span
+                  key={index}
+                  className="inline-block mr-4 max-sm:mr-2 opacity-0 -translate-y-4 hover:scale-110 transition-all duration-300 cursor-default animate-[fadeInDown_0.6s_ease-out_forwards]"
+                  style={{
+                    animationDelay: `${index * 100 + 300}ms`,
+                    transformOrigin: "center bottom",
+                  }}
+                >
+                  {word}
+                </span>
+              ))}
+            </h1>
+          </motion.div>
 
-          <div className="backdrop-blur-sm bg-foreground/5 p-4 rounded-xl opacity-0 translate-y-4 animate-[fadeInUp_0.6s_ease-out_1.2s_forwards]">
+          <motion.div
+            className="backdrop-blur-sm bg-foreground/5 p-4 rounded-xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+          >
             <TextGenerateEffect
               words="Passionate GenAI & Full Stack Developer building intelligent web solutions. Experienced in developing MERN applications and AI/ML systems, including recommendation engines, NLP chatbots, and analytics platforms."
               className="text-center text-xl max-sm:text-base font-medium text-foreground/80"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

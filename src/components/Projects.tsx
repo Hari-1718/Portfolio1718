@@ -7,11 +7,11 @@ import SectionBackground from "./SectionBackground";
 // My projects list
 const projects: IProject[] = [
   {
-    title: "Kawaiiarts – String Art E-commerce Website",
+    title: "Kawaiiarts – Full Stack E-Commerce Platform",
     image: "/kawaiiarts-project.jpg",
     description:
-      "Developed a responsive e-commerce platform with Home, Gallery, Shop, Blog, and Contact pages. Showcased 50+ unique designs and supported 100+ customer orders with free shipping. Built a complete online store for string art products with seamless user experience.",
-    techstack: ["React", "Next.js", "E-commerce", "Responsive Design", "Vercel"],
+      "Designed and developed a full-stack e-commerce application using React (Vite), Node.js, Express, and MongoDB. Implemented JWT-based authentication and role-secured RESTful APIs for user and order management. Built immersive and responsive UI using Tailwind CSS and Framer Motion.",
+    techstack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     github: "https://github.com/Hari-1718/kawaiiarts",
     preview: "https://kawaiiarts.vercel.app/",
   },
@@ -19,20 +19,37 @@ const projects: IProject[] = [
     title: "Eat Right, Live Bright - Nutrition Platform",
     image: "/eat-right-live-bright.png",
     description:
-      "Empowering families with practical, local nutrition guidance through workshops, recipes, and health education. Features a Diet Checker for personalized vegetarian-friendly diet recommendations and nutritional guides for preventing common health issues like anemia and diabetes.",
+      "Empowering families with practical, local nutrition guidance through workshops, recipes, and health education. Features a Diet Checker for personalized vegetarian-friendly diet recommendations and nutritional guides for preventing common health issues.",
     techstack: ["React", "Next.js", "Tailwind CSS", "Vercel"],
     github: "https://github.com/Hari-1718/Eat-Right-Live-Bright",
     preview: "https://eatright-livebright17.vercel.app/",
   },
   {
-    title: "Movie Recommendation System",
-    image: "",
+    title: "SHL GenAI Assessment Recommendation System",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000",
     description:
-      "Designed a hybrid recommendation engine combining content-based and collaborative filtering. Achieved silhouette score of 0.667 and reduced RMSE to 0.879 after model tuning. Implemented advanced feature engineering and model evaluation techniques.",
-    techstack: ["Python", "Machine Learning", "Recommendation Systems", "Data Preprocessing"],
+      "Designed and developed a Retrieval-Augmented Generation (RAG) system to recommend relevant SHL assessments directly from job descriptions. Implemented semantic search using sentence embeddings (MiniLM) and cosine similarity. Built a production-style backend using FastAPI.",
+    techstack: ["FastAPI", "GenAI", "RAG", "Python", "NLP"],
     github: "https://github.com/Hari-1718",
     preview: "",
-    colab: "https://colab.research.google.com/github/Hari-1718/FMML_Project_and_Labs/blob/main/Module_7_Project.ipynb",
+  },
+  {
+    title: "Agentic AI-Based Autonomous Trading System",
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1000",
+    description:
+      "Designed and implemented an autonomous trading agent using Deep Q-Networks (DQN) to make buy, sell, and hold decisions in a simulated market environment. Built a custom trading environment with reward functions to model realistic market behavior.",
+    techstack: ["Python", "Reinforcement Learning", "Deep Q-Learning", "DQN"],
+    github: "https://github.com/Hari-1718",
+    preview: "",
+  },
+  {
+    title: "Animal Sense AI – Real-Time Detection System",
+    image: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&w=1000",
+    description:
+      "Designed and developed a real-time animal detection web application using Flask and OpenCV, integrating custom-trained YOLOv8 models for high-accuracy classification. Implemented an optimized inference pipeline with lazy loading for classification and detection models.",
+    techstack: ["Flask", "OpenCV", "YOLOv8", "Python", "Computer Vision"],
+    github: "https://github.com/Hari-1718",
+    preview: "",
   },
 ];
 

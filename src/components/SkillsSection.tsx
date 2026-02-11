@@ -5,16 +5,29 @@ import { motion } from "motion/react";
 
 import PythonSvg from "@/components/icons/python.svg";
 import MongoSvg from "@/components/icons/mongodb.svg";
-import ReactSvg from "@/components/icons/react.svg";
-import NodeSvg from "@/components/icons/node.svg";
-import ExpressSvg from "@/components/icons/express.svg";
 import GitHubSvg from "@/components/icons/github.svg";
 import CSvg from "@/components/icons/c.svg";
 import JavaSvg from "@/components/icons/java.svg";
-import JavaScriptSvg from "@/components/icons/javascript.svg";
 import TensorFlowSvg from "@/components/icons/tensorflow.svg";
 import GitSvg from "@/components/icons/git.svg";
 import RestApiSvg from "@/components/icons/restapi.svg";
+import FastApiSvg from "@/components/icons/fastapi.svg";
+import FlaskApiSvg from "@/components/icons/flaskapi.svg";
+import PostgresSvg from "@/components/icons/postgres.svg";
+import PytorchSvg from "@/components/icons/pytorch.svg";
+import ScikitlearnSvg from "@/components/icons/scikitlearn.svg";
+import KerasSvg from "@/components/icons/keras.svg";
+import NumpySvg from "@/components/icons/numpy.svg";
+import PandasSvg from "@/components/icons/pandas.svg";
+import DialogflowSvg from "@/components/icons/dialogflow.svg";
+import AiSvg from "@/components/icons/ai-generic.svg";
+import MernSvg from "@/components/icons/mern.svg";
+import MeanSvg from "@/components/icons/mean.svg";
+import CicdSvg from "@/components/icons/cicd.svg";
+import DbmsSvg from "@/components/icons/dbms.svg";
+import NlpSvg from "@/components/icons/nlp.svg";
+import ComputerVisionSvg from "@/components/icons/computervision.svg";
+import DeepLearningSvg from "@/components/icons/deeplearning.svg";
 import SectionBackground from "./SectionBackground";
 
 
@@ -23,23 +36,31 @@ type SkillImage = React.FC<React.SVGProps<SVGSVGElement>>;
 // Skills I know
 const skills: { name: string; image?: SkillImage }[] = [
   { name: "Python", image: PythonSvg },
-  { name: "C", image: CSvg },
+  { name: "SQL", image: PostgresSvg },
   { name: "Java", image: JavaSvg },
-  { name: "JavaScript", image: JavaScriptSvg },
-  { name: "React.js", image: ReactSvg },
-  { name: "Node.js", image: NodeSvg },
-  { name: "Express.js", image: ExpressSvg },
-  { name: "MongoDB", image: MongoSvg },
-  { name: "REST APIs", image: RestApiSvg },
-  { name: "TensorFlow", image: TensorFlowSvg },
-  { name: "NLP" },
-  { name: "Generative AI" },
-  { name: "Data Structures" },
-  { name: "Algorithms" },
-  { name: "OOP" },
-  { name: "DBMS" },
+  { name: "C", image: CSvg },
+  { name: "Machine Learning", image: AiSvg },
+  { name: "Deep Learning", image: DeepLearningSvg },
+  { name: "Generative AI (RAG)", image: AiSvg },
+  { name: "NLP", image: NlpSvg },
+  { name: "NumPy", image: NumpySvg },
+  { name: "Pandas", image: PandasSvg },
+  { name: "FastAPI", image: FastApiSvg },
+  { name: "Flask", image: FlaskApiSvg },
+  { name: "MERN Stack", image: MernSvg },
+  { name: "MEAN Stack", image: MeanSvg },
+  { name: "CI/CD", image: CicdSvg },
+  { name: "Computer Vision", image: ComputerVisionSvg },
+  { name: "DBMS", image: DbmsSvg },
   { name: "Git", image: GitSvg },
   { name: "GitHub", image: GitHubSvg },
+  { name: "Dialogflow", image: DialogflowSvg },
+  { name: "PyTorch", image: PytorchSvg },
+  { name: "Scikit-learn", image: ScikitlearnSvg },
+  { name: "TensorFlow", image: TensorFlowSvg },
+  { name: "Keras", image: KerasSvg },
+  { name: "MongoDB", image: MongoSvg },
+  { name: "REST APIs", image: RestApiSvg },
 ];
 
 // Animation variant for individual skill cards

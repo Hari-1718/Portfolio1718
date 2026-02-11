@@ -19,8 +19,8 @@ const containerVariants: Variants = {
     y: 0,
     transition: {
       duration: 0.2,
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
     },
   },
 };
