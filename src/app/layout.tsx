@@ -49,9 +49,9 @@ export default function RootLayout({
           <ThemeDataProvider>
             <CursorProvider>
               <CustomCursor />
-              <Navbar resumeLink={(process.env.RESUME as string) ?? '/ResumeHariPrasad.pdf'} />
+              <Navbar resumeLink={(process.env.RESUME as string) ?? '/Resume.pdf'} />
               {children}
-              <Footer resumeLink={(process.env.RESUME as string) ?? '/ResumeHariPrasad.pdf'} />
+              <Footer resumeLink={(process.env.RESUME as string) ?? '/Resume.pdf'} />
             </CursorProvider>
           </ThemeDataProvider>
         </ThemeProvider>
