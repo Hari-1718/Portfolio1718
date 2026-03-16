@@ -1,6 +1,9 @@
+import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Keep tracing within this project (prevents lockfile root warnings)
+  outputFileTracingRoot: path.join(__dirname),
   // Image optimization
   images: {
     formats: ['image/avif', 'image/webp'],

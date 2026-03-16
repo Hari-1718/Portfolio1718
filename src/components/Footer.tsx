@@ -1,16 +1,13 @@
 'use client'
 import React from "react";
-import { motion, useReducedMotion } from "motion/react";
-import { Button } from "./ui/button";
-import { Download } from "lucide-react";
-import Link from "next/link";
+import { motion } from "motion/react";
 import Image from "next/image";
 import SectionText from "./SectionText";
+// import ResumeQR from "@/assets/Resume QR.jpeg";
 
 // Footer component
-const Footer: React.FC<{ resumeLink: string }> = ({ resumeLink }) => {
+const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const reduceMotion = useReducedMotion();
 
   return (
     <footer className="relative @container gap-y-8 overflow-hidden flex flex-col justify-center items-center px-2 py-[5rem]" aria-label="Site footer">
@@ -52,25 +49,7 @@ const Footer: React.FC<{ resumeLink: string }> = ({ resumeLink }) => {
         </motion.blockquote>
       </section>
 
-      {/* Resume Button */}
-      <section aria-label="Resume Download" className="mt-4">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-          viewport={{ amount: 0.5 }}
-          className="flex flex-wrap gap-2"
-        >
-          <motion.div whileHover={!reduceMotion ? { scale: 1.05 } : {}}>
-            <Button variant="outline" asChild className="text-xs" aria-label="Download Resume">
-              <Link target="_blank" href={resumeLink} rel="noopener noreferrer">
-                <Download className="mr-2" />
-                Get my Resume
-              </Link>
-            </Button>
-          </motion.div>
-        </motion.div>
-      </section>
+      {/* Resume QR removed as requested */}
 
       {/* Copyright */}
       <motion.p

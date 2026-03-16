@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Download, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -19,6 +20,8 @@ import {
 } from "@/components/ui/drawer";
 import { ThemeChanger } from "./theme-changer";
 import { ModeToggle } from "./ModeToggler";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import ResumeQR from "@/assets/Resume QR.jpeg";
 
 interface NavLink {
   href: string;
@@ -36,7 +39,7 @@ const navLinks: NavLink[] = [
 ];
 
 // Navbar component
-const Navbar: React.FC<{ resumeLink: string }> = ({ resumeLink }) => {
+const Navbar: React.FC = () => {
   const highlightRef = useRef<HTMLDivElement>(null);
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLLIElement>) => {
@@ -99,11 +102,20 @@ const Navbar: React.FC<{ resumeLink: string }> = ({ resumeLink }) => {
                   </NavigationMenuItem>
                 ))}
                 <NavigationMenuItem>
-                  <Button variant={'outline'} asChild className="text-xs">
-                    <Link target="_blank" href={resumeLink}>
-                      <Download />
-                      Get my Resume
-                    </Link>
+                  <Button
+                    asChild
+                    variant={'outline'}
+                    className="text-xs"
+                    aria-label="Open Resume PDF"
+                  >
+                      <Link
+                        href="/Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Download />
+                        Resume
+                      </Link>
                   </Button>
                 </NavigationMenuItem>
               </NavigationMenuList>
@@ -136,12 +148,26 @@ const Navbar: React.FC<{ resumeLink: string }> = ({ resumeLink }) => {
               </NavigationMenuItem>
             ))}
             <NavigationMenuItem>
-              <Button asChild variant={'outline'} className="text-xs hover:text-primary">
-                <Link target="_blank" href={resumeLink}>
-                  <Download />
-                  Resume
-                </Link>
-              </Button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant={'outline'} className="text-xs hover:text-primary" aria-label="Show resume QR">
+                    <Download />
+                    Resume
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="p-4 flex flex-col items-center gap-2">
+                  <div className="rounded-xl overflow-hidden border border-primary/30 bg-background shadow-sm">
+                    <Image
+                      src={ResumeQR}
+                      alt="Resume QR code"
+                      width={180}
+                      height={180}
+                      className="block"
+                    />
+                  </div>
+                  <p className="text-[0.7rem] text-primary-foreground/80">Scan this QR to access my resume</p>
+                </TooltipContent>
+              </Tooltip>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenuItem>
