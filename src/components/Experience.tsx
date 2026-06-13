@@ -17,144 +17,50 @@ interface ExperienceItem {
     type: string;
 }
 
-// Experience Data based on User's LinkedIn Profile
+// Experience Data based on the uploaded resume
 const experiences: ExperienceItem[] = [
     {
         id: 1,
-        role: "AI Developer Intern",
-        company: "VISWAM.AI",
-        location: "Hyderabad, Telangana (Remote)",
-        period: "May 2025 - June 2025",
+        role: "Software Engineer Intern",
+        company: "Prewise (Samyati Technologies)",
+        location: "Remote",
+        period: "Feb 2026 - Present",
         type: "Internship",
         description: [
-            "Worked as an AI Developer Intern.",
-            "Contributed to AI-driven development projects."
+            "Built frontend components and backend services for two B2B enterprise SaaS platforms.",
+            "Translated raw Figma layouts into functional, modular React interfaces.",
+            "Wrote Node.js backend logic and REST APIs with strict tenant isolation to prevent cross-account data exposure.",
+            "Debugged staging routing errors before launch to secure client-server data flow and prevent deployment failures."
         ],
-        skills: ["Artificial Intelligence", "Development"]
+        skills: ["React", "Node.js", "REST APIs", "Tenant Isolation", "Figma"]
     },
     {
         id: 2,
-        role: "Data Science Master Virtual Intern",
-        company: "EduSkills Foundation",
-        location: "India (Remote)",
-        period: "Jan 2025 - Mar 2025",
+        role: "Full Stack Developer Intern",
+        company: "SmartBridge Educational Services",
+        location: "Remote",
+        period: "May 2025 - Jul 2025",
         type: "Internship",
         description: [
-            "Completed a 10-week intensive virtual internship covering key data science concepts.",
-            "Gained hands-on experience in data preprocessing, machine learning algorithms, and model evaluation.",
-            "Worked on real-world projects under mentorship of industry experts."
+            "Traced an intermittent staging timeout issue back to unindexed, nested database reads.",
+            "Restructured aggregation paths and added targeted SQL indexes to reduce API response delays by 40%.",
+            "Assembled 12 core backend endpoints in Express.js while keeping database access isolated from the frontend."
         ],
-        skills: ["Data Science", "Machine Learning", "Data Preprocessing", "Model Evaluation"]
+        skills: ["Express.js", "SQL", "Backend APIs", "Indexes", "Performance Tuning"]
     },
     {
         id: 3,
-        role: "AI Intern – TechSaksham Program",
-        company: "Edunet Foundation",
+        role: "Artificial Intelligence Intern",
+        company: "TechSaksham (Microsoft & SAP Partnership)",
         location: "Remote",
         period: "Dec 2024 - Jan 2025",
         type: "Internship",
         description: [
-            "Completed an AI-focused internship under the TechSaksham initiative by Microsoft and SAP.",
-            "Gained hands-on experience in AI/ML fundamentals, data preprocessing, and model building.",
-            "Developed practical applications using Python and real-world datasets."
+            "Replaced a manual five-hour weekly CSV export routine with automated SQL queries to pull metrics directly from test databases.",
+            "Wrote Python scripts to filter tokenization anomalies from unstructured text data.",
+            "Improved the pipeline baseline accuracy from 74% to 88% by cleaning and processing the input data."
         ],
-        skills: ["AI", "NLP", "Machine Learning", "Python", "LLMs"]
-    },
-    {
-        id: 4,
-        role: "AI & Data Analytics Intern",
-        company: "Edunet Foundation",
-        location: "Remote",
-        period: "Dec 2024 - Jan 2025",
-        type: "Internship",
-        description: [
-            "Built 'P3' – A Chatbot Implementation using NLP with Python.",
-            "Applied intent classification, entity extraction, and dialogue management.",
-            "Collaborated in a virtual team environment and enhanced communication skills."
-        ],
-        skills: ["NLP", "Python", "Chatbot Development", "Team Collaboration"]
-    },
-    {
-        id: 5,
-        role: "AI & Data Analytics Intern (Green Skills)",
-        company: "Edunet Foundation",
-        location: "Remote",
-        period: "Nov 2024 - Dec 2024",
-        type: "Internship",
-        description: [
-            "Developed a Healthcare Prediction System using Python for diabetic patients.",
-            "Applied data preprocessing, visualisation, and classification techniques (Logistic Regression, Random Forest).",
-            "Gained exposure to sustainability-focused AI applications."
-        ],
-        skills: ["Python", "AI", "Machine Learning", "Data Analytics", "Healthcare AI"]
-    },
-    {
-        id: 6,
-        role: "AI-ML Virtual Intern",
-        company: "EduSkills Foundation",
-        location: "Remote",
-        period: "Oct 2024 - Dec 2024",
-        type: "Internship",
-        description: [
-            "Completed AI-ML Virtual Internship organized by AICTE-EduSkills with Google for Developers.",
-            "Applied concepts to real-world scenarios in AI and Machine Learning.",
-            "Skills covered image classification, object detection, and product image search."
-        ],
-        skills: ["TensorFlow", "Object Detection", "Image Classification", "Neural Networks"]
-    },
-    {
-        id: 7,
-        role: "Web Full Stack Developer Intern",
-        company: "EduSkills Foundation",
-        location: "Remote",
-        period: "Jul 2024 - Sep 2024",
-        type: "Internship",
-        description: [
-            "Deepened knowledge in full stack development and connected with professionals.",
-            "Supported by EduSkills Foundation and AICTE NEAT."
-        ],
-        skills: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "MongoDB", "SQL"]
-    },
-    {
-        id: 8,
-        role: "AI & ML Intern",
-        company: "APSSDC",
-        location: "Kakinada, Andhra Pradesh (Remote)",
-        period: "Jun 2024 - Aug 2024",
-        type: "Internship",
-        description: [
-            "Completed a 6-week internship organized by Edunet with IBM SkillsBuild.",
-            "Built machine learning models for predictive tasks using Python and IBM cloud tools.",
-            "Improved practical knowledge in ML pipelines and data visualization."
-        ],
-        skills: ["AI", "Machine Learning", "Python", "IBM SkillsBuild"]
-    },
-    {
-        id: 9,
-        role: "Summer Intern",
-        company: "Swecha Telangana",
-        location: "Hyderabad, Telangana (Remote)",
-        period: "May 2024 - Jul 2024",
-        type: "Internship",
-        description: [
-            "Worked remotely on cutting-edge AI and Large Language Models (LLMs).",
-            "Part of the Swecha Telangana Summer of AI program."
-        ],
-        skills: ["AI", "NLP", "LLMs", "Text-to-Speech"]
-    },
-    {
-        id: 10,
-        role: "Intern",
-        company: "iHub-Data, IIIT Hyderabad",
-        location: "Remote",
-        period: "Aug 2023 - May 2024",
-        type: "Internship",
-        description: [
-            "Completed 'Foundations of Modern Machine Learning' program.",
-            "Implemented algorithms, analyzed datasets, and developed predictive models.",
-            "Secured Grade A for excellent performance."
-        ],
-        skills: ["Machine Learning", "Deep Learning", "Algorithms", "Predictive Models"]
+        skills: ["Python", "SQL", "Automation", "Data Cleaning", "ML Pipeline"]
     }
 ];
 
@@ -175,10 +81,10 @@ const Experience = () => {
                     className="text-center mb-16 space-y-4"
                 >
                     <h2 className="text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-                        Work Experience
+                        Experience
                     </h2>
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        My professional journey, internships, and career milestones.
+                        Hands-on experience from the resume, focused on product delivery, backend logic, and AI/data work.
                     </p>
                 </motion.div>
 

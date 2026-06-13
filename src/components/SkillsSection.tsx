@@ -2,65 +2,40 @@
 
 import React from "react";
 import { motion } from "motion/react";
-
-import PythonSvg from "@/components/icons/python.svg";
-import MongoSvg from "@/components/icons/mongodb.svg";
-import GitHubSvg from "@/components/icons/github.svg";
-import CSvg from "@/components/icons/c.svg";
-import JavaSvg from "@/components/icons/java.svg";
-import TensorFlowSvg from "@/components/icons/tensorflow.svg";
-import GitSvg from "@/components/icons/git.svg";
-import RestApiSvg from "@/components/icons/restapi.svg";
-import FastApiSvg from "@/components/icons/fastapi.svg";
-import FlaskApiSvg from "@/components/icons/flaskapi.svg";
-import PostgresSvg from "@/components/icons/postgres.svg";
-import PytorchSvg from "@/components/icons/pytorch.svg";
-import ScikitlearnSvg from "@/components/icons/scikitlearn.svg";
-import KerasSvg from "@/components/icons/keras.svg";
-import NumpySvg from "@/components/icons/numpy.svg";
-import PandasSvg from "@/components/icons/pandas.svg";
-import DialogflowSvg from "@/components/icons/dialogflow.svg";
-import AiSvg from "@/components/icons/ai-generic.svg";
-import MernSvg from "@/components/icons/mern.svg";
-import MeanSvg from "@/components/icons/mean.svg";
-import CicdSvg from "@/components/icons/cicd.svg";
-import DbmsSvg from "@/components/icons/dbms.svg";
-import NlpSvg from "@/components/icons/nlp.svg";
-import ComputerVisionSvg from "@/components/icons/computervision.svg";
-import DeepLearningSvg from "@/components/icons/deeplearning.svg";
 import SectionBackground from "./SectionBackground";
 
+type SkillGroup = {
+  title: string;
+  description: string;
+  chips: string[];
+  featured?: string[];
+};
 
-type SkillImage = React.FC<React.SVGProps<SVGSVGElement>>;
-
-// Skills I know
-const skills: { name: string; image?: SkillImage }[] = [
-  { name: "Python", image: PythonSvg },
-  { name: "SQL", image: PostgresSvg },
-  { name: "Java", image: JavaSvg },
-  { name: "C", image: CSvg },
-  { name: "Machine Learning", image: AiSvg },
-  { name: "Deep Learning", image: DeepLearningSvg },
-  { name: "Generative AI (RAG)", image: AiSvg },
-  { name: "NLP", image: NlpSvg },
-  { name: "NumPy", image: NumpySvg },
-  { name: "Pandas", image: PandasSvg },
-  { name: "FastAPI", image: FastApiSvg },
-  { name: "Flask", image: FlaskApiSvg },
-  { name: "MERN Stack", image: MernSvg },
-  { name: "MEAN Stack", image: MeanSvg },
-  { name: "CI/CD", image: CicdSvg },
-  { name: "Computer Vision", image: ComputerVisionSvg },
-  { name: "DBMS", image: DbmsSvg },
-  { name: "Git", image: GitSvg },
-  { name: "GitHub", image: GitHubSvg },
-  { name: "Dialogflow", image: DialogflowSvg },
-  { name: "PyTorch", image: PytorchSvg },
-  { name: "Scikit-learn", image: ScikitlearnSvg },
-  { name: "TensorFlow", image: TensorFlowSvg },
-  { name: "Keras", image: KerasSvg },
-  { name: "MongoDB", image: MongoSvg },
-  { name: "REST APIs", image: RestApiSvg },
+const skillGroups: SkillGroup[] = [
+  {
+    title: "Frontend",
+    description: "Interfaces, component systems, and responsive UI work.",
+    chips: ["Next.js 15", "React.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"],
+    featured: ["Next.js 15", "React.js", "TypeScript"],
+  },
+  {
+    title: "Backend",
+    description: "APIs, validation, routing, and database-backed services.",
+    chips: ["Node.js", "Express.js", "FastAPI", "RESTful APIs", "Zod Validation", "SQL"],
+    featured: ["Node.js", "Express.js", "RESTful APIs"],
+  },
+  {
+    title: "AI/ML",
+    description: "Model integration, NLP, vision, and deep learning workflows.",
+    chips: ["LangChain", "PyTorch", "TensorFlow", "Computer Vision", "Deep Learning", "Python"],
+    featured: ["LangChain", "PyTorch", "TensorFlow"],
+  },
+  {
+    title: "Tools",
+    description: "Version control, delivery, and deployment support.",
+    chips: ["Git", "GitHub", "Docker Basics", "Postman", "Vercel", "MySQL", "MongoDB"],
+    featured: ["Git", "GitHub", "Vercel"],
+  },
 ];
 
 // Animation variant for individual skill cards
@@ -104,38 +79,57 @@ const SkillsSection = () => {
       </motion.h1>
 
       <motion.p
-        className="font-medium backdrop-blur-[1px] dark:bg-foreground/5 px-2 rounded-md text-base max-sm:text-sm text-foreground/70 text-center max-w-4xl"
+        className="font-medium backdrop-blur-[1px] dark:bg-foreground/5 px-3 py-2 rounded-md text-base max-sm:text-sm text-foreground/70 text-center max-w-4xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
-        Technologies and tools I work with
+        Frontend, backend, AI/ML, and tools I use most often
       </motion.p>
 
       <motion.div
-        className="max-w-4xl"
+        className="w-full max-w-6xl px-4 pt-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.25 }}
       >
-        <div className="flex flex-wrap gap-3 pt-6">
-          {skills.map((skill, idx) => (
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {skillGroups.map((group, idx) => (
             <motion.div
-              key={idx}
-              className="flex flex-1 group hover:bg-primary/20 transition-colors duration-300 gap-x-4 bg-foreground/5 backdrop-blur-[2px] min-w-[10rem] justify-center items-center p-4 rounded-md"
+              key={group.title}
+              className="rounded-2xl border border-foreground/10 bg-background/60 p-5 shadow-sm backdrop-blur-md"
               custom={idx}
               variants={skillCardVariant}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ y: -4, scale: 1.01 }}
+              whileTap={{ scale: 0.98 }}
             >
-              {skill.image ? (
-                <skill.image className="w-8 group-hover:rotate-[360deg] h-8 text-foreground transition-all ease-in-out duration-500" />
-              ) : (
-                <div className="w-8 h-8 rounded-md bg-foreground/3 flex items-center justify-center text-xs font-semibold text-foreground">{skill.name[0]}</div>
-              )}
-              <span className="font-semibold text-sm text-accent-foreground text-nowrap transition-transform duration-300">
-                {skill.name}
-              </span>
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-xl font-black text-foreground">{group.title}</h3>
+                  <p className="mt-1 text-sm text-foreground/65">{group.description}</p>
+                </div>
+                <div className="rounded-full border border-primary/15 bg-primary/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-primary">
+                  Core
+                </div>
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {group.chips.map((skill) => {
+                  const isFeatured = group.featured?.includes(skill);
+                  return (
+                    <span
+                      key={skill}
+                      className={
+                        isFeatured
+                          ? "rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-sm"
+                          : "rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/80"
+                      }
+                    >
+                      {skill}
+                    </span>
+                  );
+                })}
+              </div>
             </motion.div>
           ))}
         </div>

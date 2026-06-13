@@ -83,14 +83,16 @@ const AboutMe = ({
             className="text-base font-medium text-primary/80"
             variants={itemVariants}
           >
-            GenAI & Full Stack Developer
+            Software Developer
           </motion.p>
 
           <motion.p
             className="max-sm:text-sm"
             variants={itemVariants}
           >
-            Passionate GenAI & Full Stack Developer building intelligent web solutions. Experienced in developing MERN applications and AI/ML systems, including recommendation engines, NLP chatbots, and analytics platforms.
+            I build reliable web applications with TypeScript, Node.js, React,
+            Next.js, Python, and SQL, focusing on backend architecture, clean
+            APIs, and AI-powered features.
           </motion.p>
 
           <motion.div
@@ -98,7 +100,7 @@ const AboutMe = ({
             className='w-full flex items-center max-sm:flex-col gap-8 justify-between'
           >
             <ContainerTextFlip className='h-fit'
-              words={['Creative', 'Passionate', 'Tech-Savvy', 'Problem Solver', 'Adaptable']}
+              words={['Reliable', 'Focused', 'AI-Aware', 'Problem Solver', 'Adaptable']}
             />
             <LeetcodeStats
               stats={stats}

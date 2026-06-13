@@ -21,7 +21,7 @@ import {
 import { ThemeChanger } from "./theme-changer";
 import { ModeToggle } from "./ModeToggler";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import ResumeQR from "@/assets/Resume QR.jpeg";
+import ResumeQR from "@/assets/Hari_Resume_QR.png";
 
 interface NavLink {
   href: string;
