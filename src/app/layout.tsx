@@ -41,7 +41,7 @@ export default function RootLayout({
 
       <body
         suppressHydrationWarning
-        className={`${dancingScript.variable} ${montserrat.variable} ${roboto.variable} selection:bg-primary/20! antialiased font-montserrat h-dvh pt-16`}
+        className={`${dancingScript.variable} ${montserrat.variable} ${roboto.variable} selection:bg-primary/20! antialiased font-montserrat h-dvh`}
       >
         <ThemeProvider
           attribute={"class"}

@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <NavigationMenu className="bg-background/60 backdrop-blur-xs fixed z-50">
+    <NavigationMenu className="bg-background/60 backdrop-blur-xs sticky top-0 z-50">
       <NavigationMenuList className="w-dvw h-[4rem] px-4 max-md:px-2 items-center">
         {/* Logo/Name */}
         <NavigationMenuItem className="mr-auto">
