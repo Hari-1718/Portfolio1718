@@ -8,7 +8,7 @@ export function ProfileLens() {
 
     return (
         <div className="flex justify-center items-center">
-            <Lens hovering={hovering} setHovering={setHovering} lensSize={150} zoomFactor={1.2} isCircle={true} className="rounded-full">
+            <Lens hovering={hovering} setHovering={setHovering} lensSize={170} zoomFactor={1.35} isCircle={true} className="rounded-full">
                 <div className="relative w-[300px] h-[300px] max-sm:w-[250px] max-sm:h-[250px] rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
                     <Image
                         src="/hari-profile.jpg"
