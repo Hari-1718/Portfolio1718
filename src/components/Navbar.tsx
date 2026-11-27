@@ -62,11 +62,11 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <NavigationMenu className="bg-background/60 backdrop-blur-xs sticky top-0 z-50">
-      <NavigationMenuList className="w-dvw h-[4rem] px-4 max-md:px-2 items-center">
+    <NavigationMenu className="sticky top-0 z-50 flex w-full max-w-none justify-center border-b border-border/70 bg-background/90 backdrop-blur-md">
+      <NavigationMenuList className="h-[4rem] w-full items-center px-4 max-md:px-2">
         {/* Logo/Name */}
         <NavigationMenuItem className="mr-auto">
-          <Link className="text-xl font-montserrat py-3 font-bold" href="/">
+          <Link className="py-3 font-montserrat text-base font-semibold tracking-tight sm:text-lg" href="/">
             Hari Prasad Chinimilli
           </Link>
         </NavigationMenuItem>
@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
         </NavigationMenuItem>
 
         {/* Mobile menu */}
-        <NavigationMenuItem className="sm:hidden">
+        <NavigationMenuItem className="lg:hidden">
           <Drawer>
             <DrawerTrigger asChild aria-label="Open Navigation Drawer">
               <Button size="icon" variant="ghost">
@@ -124,7 +124,7 @@ const Navbar: React.FC = () => {
         </NavigationMenuItem>
 
         {/* Desktop navigation */}
-        <NavigationMenuItem className="max-sm:hidden">
+        <NavigationMenuItem className="max-lg:hidden">
           <NavigationMenuList
             className="relative flex gap-4 items-center"
             onMouseLeave={handleMouseLeave}

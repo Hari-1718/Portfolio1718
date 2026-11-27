@@ -21,21 +21,33 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
     {
         id: 1,
-        role: "Software Engineer Intern",
+        role: "Associate Software Engineer (Consultant)",
         company: "Prewise (Samyati Technologies)",
-        location: "Remote",
-        period: "Feb 2026 - Present",
-        type: "Internship",
+        location: "Bengaluru, Karnataka, India · Hybrid",
+        period: "Aug 2026 - Present",
+        type: "Part-time",
         description: [
-            "Built frontend components and backend services for two B2B enterprise SaaS platforms.",
-            "Translated raw Figma layouts into functional, modular React interfaces.",
-            "Wrote Node.js backend logic and REST APIs with strict tenant isolation to prevent cross-account data exposure.",
-            "Debugged staging routing errors before launch to secure client-server data flow and prevent deployment failures."
+            "Continued with Prewise as a part-time consultant after completing a seven-month software engineering internship."
         ],
-        skills: ["React", "Node.js", "REST APIs", "Tenant Isolation", "Figma"]
+        skills: ["React", "Node.js", "B2B SaaS", "Multi-tenant systems"]
     },
     {
         id: 2,
+        role: "Software Engineer Intern",
+        company: "Prewise (Samyati Technologies)",
+        location: "Remote",
+        period: "Feb 2026 - Aug 2026",
+        type: "Internship",
+        description: [
+            "Worked as the primary full-stack developer to build two B2B enterprise SaaS applications from scratch amid evolving requirements and tight sprint timelines.",
+            "Turned Figma layouts into modular, interactive React components.",
+            "Built Node.js business logic and secure REST APIs, with relational schemas and query validation enforcing strict tenant isolation.",
+            "Investigated staging issues affecting data flow and application routing ahead of release."
+        ],
+        skills: ["React", "Node.js", "REST APIs", "Relational schemas", "Tenant isolation", "Figma"]
+    },
+    {
+        id: 3,
         role: "Full Stack Developer Intern",
         company: "SmartBridge Educational Services",
         location: "Remote",
@@ -49,7 +61,7 @@ const experiences: ExperienceItem[] = [
         skills: ["Express.js", "SQL", "Backend APIs", "Indexes", "Performance Tuning"]
     },
     {
-        id: 3,
+        id: 4,
         role: "Artificial Intelligence Intern",
         company: "TechSaksham (Microsoft & SAP Partnership)",
         location: "Remote",
@@ -80,17 +92,17 @@ const Experience = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16 space-y-4"
                 >
-                    <h2 className="text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
+                    <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">
                         Experience
                     </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        Hands-on experience from the resume, focused on product delivery, backend logic, and AI/data work.
+                    <p className="mx-auto max-w-2xl text-base leading-7 text-muted-foreground">
+                        Product engineering, full-stack delivery, and AI/data experience.
                     </p>
                 </motion.div>
 
                 <div className="relative">
                     {/* Vertical Line */}
-                    <div className="absolute left-[19px] md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20" />
+                    <div className="absolute bottom-0 left-[19px] top-0 w-px bg-border md:left-1/2 md:-translate-x-1/2" />
 
                     <div className="space-y-12">
                         {experiences.map((exp, index) => (
@@ -104,25 +116,30 @@ const Experience = () => {
                                     }`}
                             >
                                 {/* Timeline Dot */}
-                                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 w-10 h-10 bg-background rounded-full border-4 border-primary/20 shadow-lg flex items-center justify-center z-20">
-                                    <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+                                <div className="absolute left-1.5 top-3 z-20 flex h-7 w-7 items-center justify-center rounded-full border border-primary/40 bg-background md:left-1/2 md:-translate-x-1/2">
+                                    <div className="h-2 w-2 rounded-full bg-primary" />
                                 </div>
 
                                 {/* Content Card */}
                                 <div className="flex-1 ml-12 md:ml-0">
-                                    <div className={`p-6 rounded-2xl border bg-card/50 backdrop-blur-sm shadow-sm hover:shadow-lg transition-all duration-300 group hover:border-primary/30 ${index % 2 === 0 ? "md:mr-12" : "md:ml-12"
+                                    <div className={`rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40 ${index % 2 === 0 ? "md:mr-12" : "md:ml-12"
                                         }`}>
                                         <div className="flex flex-col gap-4">
 
                                             {/* Header */}
                                             <div className="flex flex-col gap-1">
                                                 <div className="flex items-center justify-between flex-wrap gap-2">
-                                                    <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                                                    <h3 className="text-lg font-semibold text-foreground">
                                                         {exp.role}
                                                     </h3>
-                                                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-                                                        {exp.period}
-                                                    </span>
+                                                    <div className="flex flex-wrap items-center gap-2">
+                                                        <span className="rounded-md bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+                                                            {exp.type}
+                                                        </span>
+                                                        <span className="rounded-md border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                                                            {exp.period}
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground/80">
                                                     <span className="flex items-center gap-1.5">
@@ -150,7 +167,7 @@ const Experience = () => {
                                                 {exp.skills.map((skill) => (
                                                     <span
                                                         key={skill}
-                                                        className="text-[10px] px-2 py-1 rounded-md bg-secondary/30 text-secondary-foreground border border-secondary/50 font-medium"
+                                                        className="rounded-md border border-border bg-secondary/50 px-2.5 py-1 text-xs font-medium text-secondary-foreground"
                                                     >
                                                         {skill}
                                                     </span>

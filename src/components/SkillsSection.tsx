@@ -54,23 +54,14 @@ const skillCardVariant = {
 const SkillsSection = () => {
   return (
     <section
-      className="min-h-[calc(100vh-7rem)] @container overflow-hidden relative space-y-4 items-center py-12 snap-start w-full flex flex-col justify-center bg-[#DFDBE5] dark:bg-background"
+      className="relative flex min-h-[calc(100vh-7rem)] w-full flex-col items-center justify-center space-y-4 overflow-hidden py-20 snap-start"
       id="skills"
     >
-      <div
-        className="absolute inset-0 opacity-10 pointer-events-none bg-primary"
-        style={{
-          maskImage: "url('/brick-wall/brick-wall.svg')",
-          WebkitMaskImage: "url('/brick-wall/brick-wall.svg')",
-          maskRepeat: "repeat",
-          WebkitMaskRepeat: "repeat",
-        }}
-      />
       <SectionBackground text="SKILLS" />
 
 
       <motion.h1
-        className="text-4xl text-center font-black max-sm:text-2xl"
+        className="relative z-10 text-center text-4xl font-semibold tracking-tight max-sm:text-3xl"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -79,7 +70,7 @@ const SkillsSection = () => {
       </motion.h1>
 
       <motion.p
-        className="font-medium backdrop-blur-[1px] dark:bg-foreground/5 px-3 py-2 rounded-md text-base max-sm:text-sm text-foreground/70 text-center max-w-4xl"
+        className="relative z-10 max-w-4xl rounded-md px-3 py-2 text-center text-base text-muted-foreground max-sm:text-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
@@ -88,7 +79,7 @@ const SkillsSection = () => {
       </motion.p>
 
       <motion.div
-        className="w-full max-w-6xl px-4 pt-4"
+        className="relative z-10 w-full max-w-6xl px-6 pt-4 sm:px-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
@@ -97,19 +88,15 @@ const SkillsSection = () => {
           {skillGroups.map((group, idx) => (
             <motion.div
               key={group.title}
-              className="rounded-2xl border border-foreground/10 bg-background/60 p-5 shadow-sm backdrop-blur-md"
+              className="rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40"
               custom={idx}
               variants={skillCardVariant}
-              whileHover={{ y: -4, scale: 1.01 }}
-              whileTap={{ scale: 0.98 }}
             >
-              <div className="flex items-center justify-between gap-3">
+              <div className="flex items-start gap-3">
+                <span className="pt-1 text-xs font-semibold tracking-widest text-primary">0{idx + 1}</span>
                 <div>
-                  <h3 className="text-xl font-black text-foreground">{group.title}</h3>
-                  <p className="mt-1 text-sm text-foreground/65">{group.description}</p>
-                </div>
-                <div className="rounded-full border border-primary/15 bg-primary/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-primary">
-                  Core
+                  <h3 className="text-lg font-semibold tracking-tight text-foreground">{group.title}</h3>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{group.description}</p>
                 </div>
               </div>
 
@@ -121,8 +108,8 @@ const SkillsSection = () => {
                       key={skill}
                       className={
                         isFeatured
-                          ? "rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-sm"
-                          : "rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/80"
+                          ? "rounded-md bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary"
+                          : "rounded-md border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground"
                       }
                     >
                       {skill}

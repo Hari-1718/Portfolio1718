@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion, Variants } from "framer-motion";
-import DotsBackground from "./DotsBackground";
 import SectionBackground from "./SectionBackground";
 import GithubIcon from "@/components/icons/github.svg";
 import EmailIcon from "@/components/icons/email.svg";
@@ -53,225 +51,38 @@ const contactInfo: ContactInfo[] = [
   },
 ];
 
-// Animation variants
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const headerVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: -50,
-    scale: 0.8
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.8,
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 30
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      delay: 0.3,
-    },
-  },
-};
-
-const listVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      staggerChildren: 0.1,
-      delayChildren: 0.5,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-    scale: 0.8,
-    rotateX: -15,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    rotateX: 0,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
-
-const hoverVariants: Variants = {
-  hover: {
-    scale: 1.05,
-    y: -8,
-    rotateY: 5,
-    transition: {
-      duration: 0.3,
-    },
-  },
-  tap: {
-    scale: 0.95,
-    transition: {
-      duration: 0.1,
-    },
-  },
-};
-
-const iconVariants: Variants = {
-  hover: {
-    scale: 1.3,
-    rotate: 360,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
-
-const textHoverVariants: Variants = {
-  hover: {
-    scale: 1.1,
-    transition: {
-      duration: 0.3,
-    },
-  },
-};
-
 const Contact = () => {
   return (
-    <DotsBackground className="w-full overflow-hidden flex items-center justify-center">
-      <motion.section
+      <section
         id="contact-me"
-        className="max-w-4xl min-h-[calc(100vh-7rem)] relative pt-[5.5rem] grid place-content-center space-y-4 text-center"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        className="relative mx-auto grid min-h-[calc(100vh-7rem)] w-full max-w-5xl content-center space-y-8 px-6 py-24 text-center sm:px-10"
       >
         <SectionBackground text="CONTACT" />
-        <motion.div
-          className="p-1 space-y-4 rounded-md"
-          variants={headerVariants}
-        >
-          <motion.h1
-            className="text-4xl max-sm:text-2xl font-black"
-            whileHover={{
-              scale: 1.05,
-              textShadow: "0px 0px 8px rgba(var(--primary), 0.8)",
-              transition: { duration: 0.3 }
-            }}
-          >
-            Contact Me
-          </motion.h1>
-          <motion.p
-            className="text-lg max-sm:text-sm backdrop-blur-[1px]"
-            variants={textVariants}
-          >
+        <div className="relative z-10 space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Get in touch</p>
+          <h1 className="text-4xl font-semibold tracking-tight max-sm:text-3xl">Let&apos;s make something useful.</h1>
+          <p className="mx-auto max-w-xl text-base leading-7 text-muted-foreground">
             Let&apos;s connect and bring your ideas to life!
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        <motion.ul
-          className="flex w-full gap-4 py-12 flex-wrap justify-center"
-          variants={listVariants}
-        >
-          {contactInfo.map((contact, idx) => (
-            <motion.li
-              key={idx}
-              className="relative px-4 py-2 rounded-md border border-neutral-300 bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition duration-200 min-w-[8rem] group flex-1 dark:border-white dark:bg-black dark:text-white dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]"
-              variants={itemVariants}
-              whileHover="hover"
-              whileTap={contact.href.startsWith('mailto:') ? undefined : "tap"}
-              onClick={contact.href.startsWith('mailto:') ? (e) => {
-                e.stopPropagation();
-                window.location.href = 'mailto:hariprasadchinimilli18@gmail.com';
-              } : undefined}
-              style={{
-                cursor: contact.href.startsWith('mailto:') ? 'pointer' : 'default'
-              }}
-            >
-              {contact.href.startsWith('mailto:') ? (
-                <motion.div
-                  variants={hoverVariants}
-                  className="w-full h-full"
-                >
-                  <a
-                    href="mailto:hariprasadchinimilli18@gmail.com"
-                    className="relative z-10 flex gap-4 p-4 items-center justify-center rounded-xl w-full h-full cursor-pointer no-underline block"
-                    aria-label={`Contact via ${contact.name}`}
-                    style={{ textDecoration: 'none', color: 'inherit' }}
-                  >
-                    <motion.div variants={iconVariants}>
-                      <contact.icon
-                        className="w-5 h-5 transition-all duration-300"
-                        aria-hidden="true"
-                      />
-                    </motion.div>
-                    <motion.span
-                      className="text-sm transition-all duration-300 text-nowrap"
-                      variants={textHoverVariants}
-                    >
-                      {contact.name}
-                    </motion.span>
-                  </a>
-                </motion.div>
-              ) : (
-                <motion.div
-                  variants={hoverVariants}
-                  className="w-full h-full"
-                >
-                  <Link
-                    target="_blank"
-                    href={contact.href}
-                    rel="noopener noreferrer"
-                    className="relative z-10 flex gap-4 p-4 items-center justify-center rounded-xl w-full h-full"
-                    aria-label={`Contact via ${contact.name}`}
-                  >
-                    <motion.div variants={iconVariants}>
-                      <contact.icon
-                        className="w-5 h-5 transition-all duration-300"
-                        aria-hidden="true"
-                      />
-                    </motion.div>
-                    <motion.span
-                      className="text-sm transition-all duration-300 text-nowrap"
-                      variants={textHoverVariants}
-                    >
-                      {contact.name}
-                    </motion.span>
-                  </Link>
-                </motion.div>
-              )}
-            </motion.li>
+        <ul className="relative z-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {contactInfo.map((contact) => (
+            <li key={contact.name}>
+              <Link
+                href={contact.href}
+                target={contact.href.startsWith("http") ? "_blank" : undefined}
+                rel={contact.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="flex min-h-14 items-center justify-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm font-medium transition-colors hover:border-primary/50 hover:bg-accent/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                aria-label={`Contact via ${contact.name}`}
+              >
+                <contact.icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                <span>{contact.name}</span>
+              </Link>
+            </li>
           ))}
-        </motion.ul>
-      </motion.section>
-    </DotsBackground>
+        </ul>
+      </section>
   );
 };
 

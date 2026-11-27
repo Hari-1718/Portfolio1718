@@ -74,18 +74,14 @@ const AchievementCard: React.FC<{ achievement: Achievement }> = ({
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ scale: 1.05, y: -5 }}
-      className="group relative overflow-hidden rounded-xl border-2 border-transparent dark:border-none dark:bg-gradient-to-br dark:from-muted/40 dark:via-muted/20 dark:to-muted/40 bg-gradient-to-br from-background via-background/50 to-background shadow-lg hover:shadow-2xl transition-all duration-300 p-6 h-full backdrop-blur-sm"
+      className="group relative h-full overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors duration-200 hover:border-primary/40"
     >
-      {/* Glow effect on hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none -z-10 blur-xl" />
-
       <div className="relative z-10 flex flex-col h-full">
         <div className="flex items-center gap-3 mb-3">
-          <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+          <div className="rounded-lg bg-primary/10 p-2 text-primary">
             {achievement.icon}
           </div>
-          <h3 className="text-xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
+          <h3 className="text-lg font-semibold tracking-tight text-foreground">
             {achievement.title}
           </h3>
         </div>
@@ -94,7 +90,7 @@ const AchievementCard: React.FC<{ achievement: Achievement }> = ({
           {achievement.description}
         </p>
 
-        <p className="text-xs text-primary/70 font-medium">{achievement.year}</p>
+        <p className="text-xs font-medium text-muted-foreground">{achievement.year}</p>
       </div>
     </motion.div>
   );
@@ -117,8 +113,8 @@ const Achievements = () => {
           transition={{ duration: 0.5 }}
           className="text-center space-y-4"
         >
-          <h1 className="text-4xl max-sm:text-2xl font-black">Achievements</h1>
-          <p className="text-base max-sm:text-sm text-foreground/70 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-semibold tracking-tight max-sm:text-3xl">Achievements</h1>
+          <p className="mx-auto max-w-2xl text-base text-muted-foreground max-sm:text-sm">
             Turning dedication into distinction — a collection of milestones that mark my journey.
           </p>
         </motion.div>

@@ -2,178 +2,80 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, Download, Sparkles } from "lucide-react";
+import { ArrowDown, BriefcaseBusiness, Download } from "lucide-react";
 import { Button } from "./ui/button";
-import { TextGenerateEffect } from "./ui/text-generate-effect";
-import { Lens } from "./ui/lens";
+import { ProfileLens } from "./ProfileLens";
 
 const HomeSection = () => {
-  const headingWords = "Software Developer".split(" ");
-  const [hoveringHeroImage, setHoveringHeroImage] = React.useState(false);
-
-  const credibilityItems = [
-    {
-      value: "3 Projects",
-      label: "Shipped end-to-end",
-    },
-    {
-      value: "250+",
-      label: "LeetCode challenges solved",
-    },
-    {
-      value: "TypeScript",
-      label: "Next.js · Node.js · SQL",
-    },
-    {
-      value: "AI/ML",
-      label: "Chatbots, analytics, automation",
-    },
-  ];
-
   return (
-    <div className="w-full relative min-h-screen overflow-hidden bg-[#DFDBE5] dark:bg-background">
-      <div
-        className="absolute inset-0 opacity-35 pointer-events-none bg-primary"
-        style={{
-          maskImage: "url('/topography/topography.svg')",
-          WebkitMaskImage: "url('/topography/topography.svg')",
-          maskRepeat: "repeat",
-          WebkitMaskRepeat: "repeat",
-        }}
-      />
-      <div className="absolute -top-24 right-0 h-80 w-80 rounded-full bg-primary/15 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-foreground/10 blur-3xl pointer-events-none" />
+    <div className="relative w-full overflow-hidden border-b border-border/70 bg-background">
       <section
         id="home"
-        className="relative flex snap-start min-h-screen items-center justify-center px-4 py-8 sm:py-10 lg:py-14"
+        className="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-7xl items-center gap-10 px-6 py-20 sm:px-10 md:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-16"
       >
-        <div className="max-w-6xl w-full grid items-center gap-5 lg:grid-cols-[1.3fr_0.7fr]">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-4 text-center lg:text-left"
-          >
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/60 px-3 py-2 text-[0.68rem] sm:text-sm font-medium text-foreground/80 backdrop-blur-sm mx-auto lg:mx-0">
-              <Sparkles className="h-4 w-4 text-primary" />
-              <span>Computer Science graduate · April 2026 · Full-stack + AI</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-black transition-all duration-300 tracking-tight leading-none">
-              {headingWords.map((word, index) => (
-                <span
-                  key={index}
-                  className="inline-block mr-4 max-sm:mr-2 opacity-0 -translate-y-4 transition-all duration-300 cursor-default animate-[fadeInDown_0.6s_ease-out_forwards]"
-                  style={{
-                    animationDelay: `${index * 100 + 300}ms`,
-                    transformOrigin: "center bottom",
-                  }}
-                >
-                  {word}
-                </span>
-              ))}
-            </h1>
-
-            <p className="max-w-2xl text-sm sm:text-base xl:text-lg text-foreground/75 mx-auto lg:mx-0">
-              I build production-ready web systems with TypeScript, Node.js,
-              React, Next.js, Python, and SQL. My work spans backend
-              architecture, REST APIs, database design, and AI-powered
-              integrations.
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="relative z-10 w-full max-w-3xl space-y-7"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              <span className="h-px w-8 bg-primary" />
+              Full-stack developer · AI engineering
             </p>
+            <span className="rounded-full border border-primary/25 px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-wide text-primary">
+              Open to opportunities
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+            <BriefcaseBusiness className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+            <span className="font-medium text-foreground">Associate Software Engineer (Consultant)</span>
+            <span>at Prewise · Part-time</span>
+          </div>
+          <div className="space-y-3">
+            <h1 className="max-w-3xl text-5xl font-semibold leading-[1.04] tracking-[-0.055em] sm:text-6xl md:text-5xl xl:text-7xl">
+              Hello, I&apos;m Hari.
+            </h1>
+            <p className="max-w-2xl text-2xl font-medium leading-snug tracking-tight text-foreground/75 sm:text-3xl">
+              I build thoughtful software for real-world problems.
+            </p>
+          </div>
+          <p className="max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
+            I&apos;m a computer science graduate focused on dependable web
+            products, clear APIs, and practical AI features — from the first
+            sketch to the final release.
+          </p>
+          <div className="flex flex-wrap items-center gap-3 pt-1">
+            <Button asChild className="h-11 rounded-lg px-5">
+              <Link href="#projects">
+                Explore my work
+                <ArrowDown className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="h-11 rounded-lg px-5">
+              <Link href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Download className="h-4 w-4" />
+                Resume
+              </Link>
+            </Button>
+          </div>
+          <div className="flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-6 text-sm text-muted-foreground">
+            <span><strong className="mr-2 text-foreground">05</strong>Projects</span>
+            <span><strong className="mr-2 text-foreground">250+</strong>Problems solved</span>
+            <span>TypeScript · React · Python</span>
+          </div>
+        </motion.div>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5">
-              <Button
-                asChild
-                size="default"
-                className="w-full sm:w-auto rounded-full px-5 py-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20 active:translate-y-0"
-              >
-                <Link href="#projects">
-                  View Projects
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="default"
-                variant="outline"
-                className="w-full sm:w-auto rounded-full px-5 py-5 bg-transparent transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-foreground/10 active:translate-y-0"
-              >
-                <Link href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
-                  <Download className="h-4 w-4" />
-                  Download Resume
-                </Link>
-              </Button>
-            </div>
-
-            <div className="grid gap-2 pt-1 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
-              {credibilityItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-2xl border border-foreground/10 bg-background/55 px-3 py-3 text-center shadow-sm backdrop-blur-md"
-                >
-                  <div className="text-lg sm:text-xl font-black tracking-tight text-foreground leading-none">
-                    {item.value}
-                  </div>
-                  <div className="mt-1 text-[0.68rem] sm:text-xs uppercase tracking-[0.18em] text-foreground/55">
-                    {item.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </motion.div>
-
-          <motion.div
-            className="relative mx-auto w-full max-w-[240px] sm:max-w-xs lg:max-w-[300px]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
-            <div className="rounded-[1.35rem] border border-foreground/10 bg-background/60 p-2.5 sm:p-3 shadow-2xl backdrop-blur-xl">
-              <Lens
-                hovering={hoveringHeroImage}
-                setHovering={setHoveringHeroImage}
-                lensSize={180}
-                zoomFactor={1.22}
-                isCircle={false}
-                className="rounded-[1.05rem]"
-              >
-                <div className="relative aspect-[4/5] sm:aspect-[9/11] overflow-hidden rounded-[1.05rem] border border-primary/15 bg-muted">
-                  <Image
-                    src="/hari-profile.jpg"
-                    alt="Hari Prasad Chinimilli"
-                    fill
-                    priority
-                    className="object-cover object-top"
-                    sizes="(max-width: 1024px) 100vw, 380px"
-                  />
-                </div>
-              </Lens>
-
-              <div className="mt-3 space-y-2 text-left">
-                <div className="flex items-start justify-between gap-2.5">
-                  <div>
-                    <p className="text-[0.58rem] sm:text-[0.68rem] uppercase tracking-[0.16em] text-foreground/50">
-                      Available for internships / full-time
-                    </p>
-                    <p className="text-base sm:text-xl font-bold leading-tight">Hari Prasad Chinimilli</p>
-                  </div>
-                  <div className="rounded-2xl border border-primary/15 bg-primary/10 px-2.5 py-2 text-right">
-                    <p className="text-[0.6rem] sm:text-[0.65rem] text-foreground/60">Focus</p>
-                    <p className="text-[0.7rem] sm:text-xs font-semibold leading-tight">AI + Full Stack</p>
-                  </div>
-                </div>
-
-                <TextGenerateEffect
-                  words="Computer Science graduate building reliable apps, clean APIs, and AI-powered features that ship fast and work in production."
-                  className="text-[0.7rem] sm:text-sm font-medium text-foreground/75"
-                />
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        <motion.figure
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.55, ease: "easeOut" }}
+          className="relative z-10 mx-auto w-full max-w-[22rem] self-center md:-translate-y-8 md:justify-self-end"
+        >
+          <ProfileLens />
+        </motion.figure>
 
       </section>
     </div>

@@ -7,8 +7,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import ThemeDataProvider from "@/components/theme-color-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { CursorProvider } from "@/context/CursorContext";
-import CustomCursor from "@/components/CustomCursor";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -50,12 +48,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ThemeDataProvider>
-            <CursorProvider>
-              <CustomCursor />
-              <Navbar />
-              {children}
-              <Footer />
-            </CursorProvider>
+            <Navbar />
+            {children}
+            <Footer />
           </ThemeDataProvider>
         </ThemeProvider>
         <Script

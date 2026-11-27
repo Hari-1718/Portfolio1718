@@ -2,7 +2,6 @@
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
 import { ContainerTextFlip } from './ui/container-text-flip'
-import { ProfileLens } from './ProfileLens'
 import LeetcodeStats from './LeetcodeStats'
 import SectionBackground from './SectionBackground'
 
@@ -55,18 +54,14 @@ const AboutMe = ({
       <SectionBackground text="ABOUT ME" className="opacity-10" />
 
       <motion.div
-        className="flex flex-col md:flex-row items-center justify-between max-sm:justify-center gap-8 max-sm:gap-2 max-w-4xl w-full px-4"
+        className="flex w-full max-w-3xl flex-col items-center justify-center px-6"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="flex-shrink-0 relative w-[300px] h-[300px] max-sm:w-[250px] max-sm:h-[250px] flex items-center justify-center">
-          <ProfileLens />
-        </div>
-
         <motion.div
-          className="space-y-4 max-md:px-4 text-center md:text-left w-full"
+          className="w-full space-y-4 text-center"
           variants={containerVariants}
         >
           <motion.h1
